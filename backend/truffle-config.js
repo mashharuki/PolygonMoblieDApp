@@ -4,18 +4,17 @@
 module.exports = {
 
   networks: {
-     
+    development: {
+      host: "localhost",
+      port: 7545,
+      network_id: "*",
+    },
   },
-
-  // Set default mocha options here, use special reporters etc.
-  mocha: {
-    // timeout: 100000
-  },
-
+  contracts_directory: "./contracts",
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.58.4",    // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.4",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       settings: {          // See the solidity docs for advice about optimization and evmVersion
         optimizer: {
@@ -25,5 +24,8 @@ module.exports = {
       //  evmVersion: "byzantium"
       }
     }
-  }
+  },
+  db: {
+    enabled: false,
+  },
 }
