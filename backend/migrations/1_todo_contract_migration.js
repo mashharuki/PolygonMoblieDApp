@@ -1,4 +1,4 @@
-const TodoContract = artifacts.require("TodoContract");
+var  TodoContract = artifacts.require("TodoContract");
 
 module.exports = function (deployer) {
     deployer.deploy(TodoContract);
