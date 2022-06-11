@@ -1,6 +1,10 @@
 # PolygonMoblieDApp
 Poygon上で動作するDApp用のリポジトリです。
 
+## 注意事項！！
+ このリポジトリ内で使用している秘密鍵は開発用です！！  
+ 絶対に本番では使用しないでください。
+
 ### デプロイした結果例
  ```cmd
   Starting migrations...
@@ -84,3 +88,7 @@ Summary
 > Total deployments:   1
 > Final cost:          0.001836895008082338 ETH
  ```
+
+### フロント側アプリ起動方法
+ `cd client`  
+ `flutter run`

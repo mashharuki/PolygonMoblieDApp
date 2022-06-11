@@ -35,7 +35,7 @@ module.exports = {
     },
   },
   contracts_directory: "./contracts",
-  contracts_build_directory: "./../client/smartcontract",
+  contracts_build_directory: "./../client/assets/smartcontract",
   // Configure your compilers
   compilers: {
     solc: {
