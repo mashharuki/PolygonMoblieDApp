@@ -5,8 +5,8 @@
 // 必要なモジュールをインポートする
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_dapp_front/TodoBottomSheet.dart';
-import 'package:todo_dapp_front/TodoListModel.dart';
+import 'package:client/TodoBottomSheet.dart';
+import 'package:client/TodoListModel.dart';
 
 /**
  * TodoListクラス

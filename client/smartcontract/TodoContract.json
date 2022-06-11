@@ -8536,10 +8536,16 @@
       "links": {},
       "address": "0xB925314e7D3CD05110cEE94F9E8B8fC2E970F757",
       "transactionHash": "0x762786e30fe834c15c8713335f10789cca002bd1a30d192ae60f7ad90a48c494"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0x7B31aa8Df58697f1F8723372Fe1C1D1ba1050A6A",
+      "transactionHash": "0x03844cf607d358eb70c7a7be00d472cb12fce05bb52da92c271b7cda0f013750"
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-06-11T06:12:32.350Z",
+  "updatedAt": "2022-06-11T07:52:59.934Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

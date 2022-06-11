@@ -5,7 +5,7 @@
 // 必要となるモジュールをインポートする。
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_dapp_front/TodoListModel.dart';
+import 'package:client/TodoListModel.dart';
 
 /**
  * Todoの更新・削除用のフォームコンポーネント

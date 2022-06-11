@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart';
 import 'package:web3dart/web3dart.dart';
 import 'package:web_socket_channel/io.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /**
  * TodoListModelクラス
@@ -18,7 +18,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
  */
 class TodoListModel extends ChangeNotifier {
     // 環境変数の読み込み
-    await DotEnv.load(fileName: ".env");
+    await dotEnv.load(fileName: ".env");
     // 各種変数を定義
     List<Task> todos = [];
     bool isLoading = true;
@@ -27,7 +27,7 @@ class TodoListModel extends ChangeNotifier {
     final String _wsUrl = "ws://127.0.0.1:7545/";
 
     // ウォレットの秘密鍵
-    final String _privateKey = env["YOUR_PRIVATE_KEY"];
+    final String _privateKey = dotenv.env["YOUR_PRIVATE_KEY"];
 
     Web3Client? _client;
     String? _abiCode;
