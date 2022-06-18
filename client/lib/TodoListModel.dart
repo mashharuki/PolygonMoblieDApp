@@ -16,13 +16,11 @@ import 'package:web_socket_channel/io.dart';
  * ChangeNotifierクラスを継承
  */
 class TodoListModel extends ChangeNotifier {
-    // 環境変数の読み込み
-    // await dotenv.load(fileName: ".env");
     // 各種変数を定義
     List<Task> todos = [];
     bool isLoading = true;
     int? taskCount;
-    final String _rpcUrl = "http://10.0.2.2:7545";
+    final String _rpcUrl = "http://127.0.0.1:7545/";
     final String _wsUrl = "ws://127.0.0.1:7545/";
 
     // ウォレットの秘密鍵
@@ -126,7 +124,7 @@ class TodoListModel extends ChangeNotifier {
         isLoading = false;
         todos = todos.reversed.toList();
 
-        notifyListeners();
+        // notifyListeners();
     }
 
     /**
@@ -134,7 +132,7 @@ class TodoListModel extends ChangeNotifier {
      */
     addTask(String taskNameData) async {
         isLoading = true;
-        notifyListeners();
+        //notifyListeners();
         // createTodoメソッドを呼び出す。
         await _client!.sendTransaction(
             _credentials!,
@@ -153,7 +151,7 @@ class TodoListModel extends ChangeNotifier {
      */
     updateTask(int id, String taskNameData) async {
         isLoading = true;
-        notifyListeners();
+        //notifyListeners();
         // updateTaskメソッドを呼び出す。
         await _client!.sendTransaction(
             _credentials!,
@@ -172,7 +170,7 @@ class TodoListModel extends ChangeNotifier {
      */
     toggleComplete(int id) async {
         isLoading = true;
-        notifyListeners();
+        //notifyListeners();
         // toggleCompleteメソッドを呼び出す。
         await _client!.sendTransaction(
             _credentials!,
@@ -191,7 +189,7 @@ class TodoListModel extends ChangeNotifier {
      */
     deleteTask(int id) async {
         isLoading = true;
-        notifyListeners();
+        //notifyListeners();
         // deleteTaskメソッドを呼び出す。
         await _client!.sendTransaction(
             _credentials!,
