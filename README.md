@@ -92,3 +92,21 @@ Summary
 ### フロント側アプリ起動方法
  `cd client`  
  `flutter run`
+
+### flutter 開発環境の確認
+ `flutter doctor`  
+
+ 下記の様なコマンドが出ればOK  
+
+ ```cmd
+   Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel unknown, 2.5.3, on macOS 12.4 21F79 darwin-x64, locale ja-JP)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.1)
+[✓] Xcode - develop for iOS and macOS
+[✓] Chrome - develop for the web
+[✓] Android Studio (version 4.0)
+[✓] VS Code (version 1.68.1)
+[✓] Connected device (1 available)
+
+• No issues found!
+ ```
