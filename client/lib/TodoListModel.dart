@@ -10,6 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart';
 import 'package:web3dart/web3dart.dart';
 import 'package:web_socket_channel/io.dart';
+import 'dart:developer';
 
 /**
  * TodoListModelクラス
@@ -20,8 +21,8 @@ class TodoListModel extends ChangeNotifier {
     List<Task> todos = [];
     bool isLoading = true;
     int? taskCount;
-    final String _rpcUrl = "http://127.0.0.1:7545/";
-    final String _wsUrl = "ws://127.0.0.1:7545/";
+    final String _rpcUrl = "http://10.0.2.2:7545";
+    final String _wsUrl = "ws://10.0.2.2:7545/";
 
     // ウォレットの秘密鍵
     final String _privateKey = "88ee8a7767583634961245b09c15cd0dd421d954fc7d03f71b85985432f8ed4b";
@@ -77,6 +78,7 @@ class TodoListModel extends ChangeNotifier {
      */
     Future<void> getCredentials() async {
         _credentials = await _client!.credentialsFromPrivateKey(_privateKey);
+        log(_credentials.toString());
         _ownAddress = await _credentials!.extractAddress();
     }
 
