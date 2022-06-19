@@ -5,6 +5,9 @@ Poygon上で動作するDApp用のリポジトリです。
  このリポジトリ内で使用している秘密鍵は開発用です！！  
  絶対に本番では使用しないでください。
 
+## デモGIF
+ <img src="./assets/demo.gif">
+
 ### デプロイした結果例
  ```cmd
   Starting migrations...

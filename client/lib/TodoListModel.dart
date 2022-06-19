@@ -13,6 +13,16 @@ import 'package:web_socket_channel/io.dart';
 import 'dart:developer';
 
 /**
+ * Task用のクラス
+ */
+class Task {
+    final int? id;
+    final String? taskName;
+    final bool? isCompleted;
+    Task({this.id, this.taskName, this.isCompleted});
+}
+
+/**
  * TodoListModelクラス
  * ChangeNotifierクラスを継承
  */
@@ -77,7 +87,8 @@ class TodoListModel extends ChangeNotifier {
      * クレデンシャルオブジェクトを生成するメソッド
      */
     Future<void> getCredentials() async {
-        _credentials = await _client!.credentialsFromPrivateKey(_privateKey);
+        // _credentials = await _client!.credentialsFromPrivateKey(_privateKey);
+        _credentials = EthPrivateKey.fromHex(_privateKey);
         log(_credentials.toString());
         _ownAddress = await _credentials!.extractAddress();
     }
@@ -126,7 +137,9 @@ class TodoListModel extends ChangeNotifier {
         isLoading = false;
         todos = todos.reversed.toList();
 
-        // notifyListeners();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+            notifyListeners();
+        });
     }
 
     /**
@@ -134,7 +147,9 @@ class TodoListModel extends ChangeNotifier {
      */
     addTask(String taskNameData) async {
         isLoading = true;
-        //notifyListeners();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+            notifyListeners();
+        });
         // createTodoメソッドを呼び出す。
         await _client!.sendTransaction(
             _credentials!,
@@ -153,7 +168,9 @@ class TodoListModel extends ChangeNotifier {
      */
     updateTask(int id, String taskNameData) async {
         isLoading = true;
-        //notifyListeners();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+            notifyListeners();
+        });
         // updateTaskメソッドを呼び出す。
         await _client!.sendTransaction(
             _credentials!,
@@ -172,7 +189,9 @@ class TodoListModel extends ChangeNotifier {
      */
     toggleComplete(int id) async {
         isLoading = true;
-        //notifyListeners();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+            notifyListeners();
+        });
         // toggleCompleteメソッドを呼び出す。
         await _client!.sendTransaction(
             _credentials!,
@@ -191,7 +210,9 @@ class TodoListModel extends ChangeNotifier {
      */
     deleteTask(int id) async {
         isLoading = true;
-        //notifyListeners();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+            notifyListeners();
+        });
         // deleteTaskメソッドを呼び出す。
         await _client!.sendTransaction(
             _credentials!,
@@ -204,14 +225,4 @@ class TodoListModel extends ChangeNotifier {
         // 全件検索
         await getTodos();
     }
-}
-
-/**
- * タスク用のクラス
- */
-class Task {
-    final int? id;
-    final String? taskName;
-    final bool? isCompleted;
-    Task({this.id, this.taskName, this.isCompleted});
 }

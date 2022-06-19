@@ -12,7 +12,7 @@ import 'package:client/TodoListModel.dart';
  */
 showTodoBottomSheet(BuildContext context, {Task? task}) {
     // タイトルを取得する。
-      TextEditingController _titleController = TextEditingController(text: task?.taskName ?? "");
+    TextEditingController _titleController = TextEditingController(text: task?.taskName ?? "");
     var listModel = Provider.of<TodoListModel>(context, listen: false);
 
     //タスクを作成、更新、削除できるボトムシートを表示する。
@@ -31,8 +31,8 @@ showTodoBottomSheet(BuildContext context, {Task? task}) {
                                 height: 6,
                                 width: 80,
                                 decoration: BoxDecoration(
-                                color: Colors.grey,
-                                borderRadius: BorderRadius.circular(20),
+                                    color: Colors.grey,
+                                    borderRadius: BorderRadius.circular(20),
                                 ),
                             ),
                             const SizedBox(height: 18),
@@ -86,10 +86,10 @@ showTodoBottomSheet(BuildContext context, {Task? task}) {
 /**
  * ボタン用のコンポーネント
  */
-TextButton buildButton(String text, Function onPressed) {
+TextButton buildButton(String text, void Function()? onPressed) {
     return TextButton(
         // 押された時にメソッドを呼び出す。
-        onPressed: onPressed(),
+        onPressed: onPressed,
         child: Container(
             child: Center(
                 child: Text(
